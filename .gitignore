@@ -1,0 +1,49 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode user-specific files
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Secrets - IMPORTANT: Never commit API keys!
+.env
+!.env.example
+*.key
+*.pem
+
+# Internal documentation (development only)
+APP_STORE_METADATA.md
+DEPLOYMENT_GUIDE.md
+SETUP.md
+SIMPLE_SETUP.md
+project.yml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Archives
+*.xcarchive
