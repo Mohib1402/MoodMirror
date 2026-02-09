@@ -2,6 +2,58 @@
 
 AI-powered emotion tracking app that uses your camera, voice, and Google's Gemini AI to help you understand your emotional patterns.
 
+---
+
+## 🤖 Gemini 3 Integration
+
+MoodMirror leverages **Google's Gemini 3 API** (`gemini-3-flash-preview`) as its core intelligence engine for multimodal emotion analysis. The app sends three distinct data streams to Gemini in a single API call:
+
+1. **Visual Analysis** - A base64-encoded selfie image is sent directly to Gemini's vision capabilities, allowing the model to detect facial expressions, micro-expressions, and emotional cues that traditional computer vision might miss.
+
+2. **Voice Sentiment** - Audio recordings are transcribed using Apple's Speech framework, then the transcription text along with detected vocal patterns (pace, pauses) are analyzed by Gemini for emotional undertones.
+
+3. **Contextual Notes** - User-provided text notes give Gemini additional context to provide more accurate emotional assessments.
+
+Gemini synthesizes all three inputs to return a structured JSON response containing: primary emotion classification, confidence scores across 8 emotion categories (joy, sadness, anger, fear, surprise, disgust, trust, anticipation), and personalized AI insights. The model's advanced reasoning capabilities enable it to identify emotional patterns across multiple check-ins, providing users with actionable mental health insights over time.
+
+---
+
+## 🏗 Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        MoodMirror App                           │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+│  │   Camera    │  │    Voice    │  │    Notes    │              │
+│  │  (Vision)   │  │  (Speech)   │  │   (Text)    │              │
+│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘              │
+│         │                │                │                      │
+│         └────────────────┼────────────────┘                      │
+│                          ▼                                       │
+│              ┌───────────────────────┐                          │
+│              │   GeminiService       │                          │
+│              │  (Multimodal Request) │                          │
+│              └───────────┬───────────┘                          │
+│                          │                                       │
+└──────────────────────────┼───────────────────────────────────────┘
+                           ▼
+              ┌───────────────────────┐
+              │   Gemini 3 Flash API  │
+              │ (gemini-3-flash-preview)│
+              └───────────┬───────────┘
+                          │
+                          ▼
+              ┌───────────────────────┐
+              │   EmotionAnalysis     │
+              │  - Primary Emotion    │
+              │  - Confidence Scores  │
+              │  - AI Insights        │
+              └───────────────────────┘
+```
+
+---
+
 ## ✨ Features
 
 - **📸 Facial Expression Analysis** - Capture a selfie and let AI analyze your emotional state
@@ -110,4 +162,6 @@ MIT License - see LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
-Built with Google's Gemini API for the AI Developer Competition.
+Built for the **Google DeepMind Gemini 3 Hackathon** (December 2025 - February 2026).
+
+Powered by [Google Gemini 3 API](https://ai.google.dev/).
