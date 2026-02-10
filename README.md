@@ -64,9 +64,24 @@ Gemini synthesizes all three inputs to return a structured JSON response contain
 - **🔔 Daily Reminders** - Optional notifications to check in with yourself
 - **🔒 Privacy-First** - All data stored locally on your device
 
+## 🎥 Demo Video
+
+[![MoodMirror Demo](https://img.youtube.com/vi/qwmWwceFU2A/0.jpg)](https://www.youtube.com/watch?v=qwmWwceFU2A)
+
+👆 Click to watch the demo on YouTube
+
 ## 📱 Screenshots
 
-*Coming soon*
+<p align="center">
+  <img src="screenshots/01-checkin-home.png" width="200" alt="Check-in Home"/>
+  <img src="screenshots/02-timeline.png" width="200" alt="Timeline"/>
+  <img src="screenshots/03-insights.png" width="200" alt="AI Insights"/>
+  <img src="screenshots/04-settings.png" width="200" alt="Settings"/>
+</p>
+
+| Check-in | Timeline | AI Insights | Settings |
+|----------|----------|-------------|----------|
+| Start emotion analysis | View history | Gemini-powered patterns | Privacy controls |
 
 ## 🛠 Requirements
 
